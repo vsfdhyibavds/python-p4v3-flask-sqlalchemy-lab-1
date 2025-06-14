@@ -30,3 +30,9 @@ class TestEarthquake:
         '''to_dict() result'''
         quake = Earthquake(magnitude=9.5, location="Chile", year=1960)
         assert quake.to_dict()
+
+    def test_repr(self):
+        '''__repr__ method returns expected string'''
+        quake = Earthquake(id=1, magnitude=9.5, location="Chile", year=1960)
+        expected = "<Earthquake 1, 9.5, Chile, 1960>"
+        assert repr(quake) == expected
